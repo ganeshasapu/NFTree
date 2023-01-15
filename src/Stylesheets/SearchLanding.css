@@ -22,12 +22,20 @@
     background-color: green;
     width: 75px;
     height: 75px;
+    z-index: 2;
+    margin-bottom: 10px;
+}
+
+.stage-number{
+    font-size: 48px;
+    margin-left: 22px;
+    margin-top: 10px;
 }
 
 .divider{
     border: 1px solid #828282;
     width: 85vw;
-    
+    margin-left: 0vw;
 }
 
 .stage-wrapper{

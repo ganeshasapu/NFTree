@@ -5,3 +5,11 @@
 #body-container{
     background-color: #fff;
 }
+
+#panda{
+    width: 242px;
+    position: absolute;
+    height: auto;
+    top: 56%;
+    left: 44%;
+}

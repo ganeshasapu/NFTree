@@ -107,7 +107,7 @@ export const SearchLanding = ({}) =>{
                                     handlePurchaseClick()
                                     window.open(option.productLink, "_blank")
                                 }}>
-                                <   LinkIcon fontSize="large" />
+                                <   LinkIcon style={{ color: 'white' }} fontSize="large" />
                                 </button>
                             </div>
                         </div>
@@ -126,17 +126,17 @@ export const SearchLanding = ({}) =>{
                     
                         <div className="stage-wrapper">
                             <div className="stage">
-                                <div className="stage-icon"/>
+                                <div className="stage-icon"><div className="stage-number">1</div></div>
                                 {option.stages.primary}
                             </div>
                             <div className="stage-line-1"/>
                             <div className="stage">
-                                <div className="stage-icon"/>
+                                <div className="stage-icon"><div className="stage-number">2</div></div>
                                 {option.stages.secondary}
                             </div>
                             <div className="stage-line-2"/>
                             <div className="stage">
-                                <div className="stage-icon"/>
+                                <div className="stage-icon"><div className="stage-number">3</div></div>
                                 {option.stages.tertiary}
                             </div>
                         </div>

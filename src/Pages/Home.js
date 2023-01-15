@@ -51,7 +51,7 @@ export const Home = ({}) =>{
                     <div id="slide-5">
                         <img src={climate_5}/>
                     </div>
-                </div>
+                </div>Î
             </div>
 
             <div id="about-us">

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Navbar } from "../Components/Navbar";
 import { useNavigate } from "react-router";
 import { productsList } from "../assets/productsList";
+import panda from "./panda.png"
 
 export const Search = ({}) =>{
     const filterData = (query, data) => {
@@ -34,6 +35,12 @@ export const Search = ({}) =>{
     >
         <Navbar style= {{top: "1%", left: "1%"}}/>
         <Searchbar setSearchQuery={setSearchQuery} setClicked={setClicked} onSubmitFunc={handleProductSubmit} givenData=""/>
+        <img src={panda} alt="Panda" id="panda" style={{  
+    width: "242px",
+    position: "absolute",
+    height: "auto",
+    top: "56%",
+    left: "44%",}}/>
     </div>
     )
 } 

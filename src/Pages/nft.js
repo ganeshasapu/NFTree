@@ -4,10 +4,12 @@ import "../Stylesheets/NftPage.css"
 import { Dots } from 'loading-animations-react';
 import ParticleBackground from 'react-particle-backgrounds'
 
+
 export const NftPage = () =>{
+    var apiKey = process.env.REACT_APP_OPENAI_API_KEY
     const { Configuration, OpenAIApi } = require("openai");
     const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: apiKey
     });
     const openai = new OpenAIApi(configuration);
 
