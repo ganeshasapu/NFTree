@@ -27,6 +27,7 @@ export const Searchbar = ({setSearchQuery, setClicked, onSubmitFunc, givenData})
     return(
             <form onSubmit={handleSubmit} id="form" style={{paddingTop: "5vh"}}>
                 <TextField
+                style={{backgroundColor: "#737373", color: "white", borderRadius: "15px"}}
                 id="search-bar"
                 className="search"
                 onInput={(e) => {
@@ -42,11 +43,18 @@ export const Searchbar = ({setSearchQuery, setClicked, onSubmitFunc, givenData})
                 variant="outlined"
                 placeholder="Search..."
                 defaultValue={givenData}
+                InputLabelProps={{ style: {
+                    color: "#b3b3b3"
+                }}}
+                InputProps={{style: {
+                    color: "#b3b3b3"
+                }}}
+                
                 >
                     
                 </TextField>
 
-                <IconButton type="submit"><Search style={{ fill: "blue"}} /></IconButton>
+                <IconButton type="submit"><Search style={{ fill: "green"}} /></IconButton>
             </form>
             
         

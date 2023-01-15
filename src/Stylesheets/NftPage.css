@@ -1,15 +1,68 @@
-#body-container{
-    background-color: #fff;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@keyframes wipe-enter {
+	0% {
+		transform: scale(0, 0);
+	}
+	50% {
+		transform: scale(1, 0.5);
+	}
 }
 
 .nft{
-    position: static;
-    display: block;
-    width: 250px;
-    height: 250px;
+
+    box-shadow: 0px 0px 217px 38px rgba(3,235,84,0.9);
+    border-radius: 10%;
+    animation-name: wipe-enter;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+
+}
+
+.nft-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 750px;
+    height: 750px;
+    animation-name: floating;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+}
+@keyframes floating {
+    0% { transform: translate(-50%, -45%); }
+    50%  { transform: translate(-50%, -50%); }
+    100%   { transform: translate(-50%, -45%); }   
+}
+
+
+.nft-text{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: white;
+    font-size: 48px;
+}
+
+.nft-background{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(15,23,23);
+    background: linear-gradient(0deg, rgba(15,23,23,1) 35%, rgba(43,125,56,1) 100%);    
+}
+
+.nft-title{
+    width: 100vw;
+    top: 7.5vh;
+    position: absolute;
+    text-align: center;
+    font-size: 48px;
+    background-image: linear-gradient(#99f4a7b0, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

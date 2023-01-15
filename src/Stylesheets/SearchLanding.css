@@ -1,5 +1,5 @@
 #body-container{
-    background-color: #fff;
+    background-color: #0d1116;
 }
 
 .option-wrapper{
@@ -14,22 +14,20 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    color: white;
 }
 
 .stage-icon{
     border-radius: 100%;
-    background-color: red;
+    background-color: green;
     width: 75px;
     height: 75px;
 }
 
 .divider{
+    border: 1px solid #828282;
     width: 85vw;
-    height: 5px;
-    border: none;
-    background-color: gray;
-    margin-top: 15vh;
-    margin-bottom: 15vh;
+    
 }
 
 .stage-wrapper{
@@ -37,13 +35,14 @@
     width: 85vw;
     justify-content: space-between;
     margin-top: 5vh;
+    margin-bottom: 15vh;
 }
 
 .stage-line-1{
     position: absolute;
     width: 40vw;
     height: 5px;
-    background-color: red;
+    background-color: green;
     left: 7.5vw;
     margin-top: 2.5vh;
 }
@@ -52,7 +51,7 @@
     position: absolute;
     width: 40vw;
     height: 5px;
-    background-color: red;
+    background-color: green;
     left: 47.5vw;
     margin-top: 2.5vh;
 }
@@ -70,6 +69,7 @@
 .carbon-emissions-main{
     font-size: 36px;
     margin-top: 5px;
+    color: white
 }
 
 .emissions-rating-main{
@@ -153,5 +153,37 @@
     height: 20vw;
     background-color: green !important;
     z-index: 100 !important;
+}
+
+.option-image{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: static;
     
+}
+
+.company-logo{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    position: static;
+}
+
+.image-wrapper{
+    width: 85vw;
+    height: 40vh;
+    margin-top: 2vh;
+}
+
+.option-good{
+    border: 7px solid green;
+}
+
+.option-ok{
+    border: 7px solid orange;
+}
+
+.option-bad{
+    border: 7px solid red;
 }

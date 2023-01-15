@@ -70,62 +70,58 @@ export const SearchLanding = ({}) =>{
     <div id="body-container">
         <Navbar />
         <Searchbar setSearchQuery={setSearchQuery} setClicked={setClicked} onSubmitFunc={handleProductSubmit} givenData={productName}/>
-        <div style={{border: "solid 1px gray", backgroundColor: "white", borderTop:"none", width: "80vw", display: `${clicked ? "block" : "none"}`, position:"absolute", left: "9vw", top: "10vh"}}>
-            {dataFiltered.map((d, i) => (
-            <div
-                className="text"
-                style={{
-                padding: 5,
-                justifyContent: "normal",
-                fontSize: 20,
-                color: "blue",
-                marginleft: 50,
-                width: "250px",
-                textAlign: "left"
-                }}
-                key={i}
-            >
-                {d}
-            </div>
-            ))}
-        </div>
         <div className="options-contianer">
             {productInfo.options.map((option, i) =>{
                 var stars = Math.min(Math.floor(option.optionCarbonEmissions / 3000), 5)
                 return(
                     <div className="option-wrapper">
                         <div style={{display: "flex"}}>
-                            <div style={{borderRadius: "100%", backgroundColor:"red", width: "100px", height: "100px"}}/>
+                            <div style={{borderRadius: "100%", width: "100px", height: "100px"}}>
+                                <img className="company-logo" src={option.company_logo} />
+                            </div>
                             <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
-                                <div style={{fontSize: "48px", border: "1px solid red", marginLeft: "2.5vw"}}>{option.company}</div>
+                                <div style={{fontSize: "48px", marginLeft: "2.5vw", color:"white"}}>{option.company}</div>
                             </div>
                         </div>
-                        <div style={{border: "1px solid red", width: "85vw", height: "40vh", marginTop: "2vh"}}>
+                        {
+                            stars == 1 ? 
+                        <div className={"image-wrapper option-good" }>
+                            <img className="option-image" src={option.optionImage} alt="car_image" />
                         </div>
+                         : stars <= 3 ? 
+                        <div className={"image-wrapper option-ok" }>
+                            <img className="option-image" src={option.optionImage} alt="car_image" />
+                        </div>
+                        : 
+                        <div className={"image-wrapper option-bad" }>
+                            <img className="option-image" src={option.optionImage} alt="car_image" />
+                        </div>
+                        
+                        }
                         <div style={{display:"flex", width:"85vw"}}>
                             <div className="carbon-emissions-main">
-                                {option.optionCarbonEmissions}
+                                {"Carbon Emissions (lbs): " + option.optionCarbonEmissions}
                             </div>
                             <div style={{textAlign:"right", flexGrow: 1}}>
                                 <button className="button-unfill" onClick={() =>{
                                     handlePurchaseClick()
-                                    // window.open(option.productLink, "_blank")
+                                    window.open(option.productLink, "_blank")
                                 }}>
                                 <   LinkIcon fontSize="large" />
                                 </button>
                             </div>
                         </div>
                         <div className="emissions-rating-main">
-                            {[...Array(stars)].map((n) =>{
-                                return(<ParkIcon key={n} fontSize="large" className="star" />)
-                            })}
                             {[...Array(5 - stars)].map((n) =>{
-                                return(<ParkOutlinedIcon fontSize="large" key={n} className="star" />)
+                                return(<ParkIcon  style={{ color: 'green' }} key={n} fontSize="large" className="star" />)
+                            })}
+                            {[...Array(stars)].map((n) =>{
+                                return(<ParkOutlinedIcon style={{ color: 'green' }} fontSize="large" key={n} className="star" />)
                             })}
                         </div>
 
-                        <div style={{width: "85vw", marginTop: "2.5vh"}}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at convallis justo. Donec nulla justo, iaculis sit amet accumsan quis, sollicitudin vel nunc. Vivamus lobortis eu lorem non interdum. Suspendisse vitae felis id dui sagittis tempor. Etiam rhoncus pretium nisi, vel scelerisque mi laoreet non. Nulla facilisi. Vestibulum gravida fringilla ante, congue elementum sem porttitor vel. Praesent cursus nisi magna, et ullamcorper arcu ultrices ut. Proin in diam vulputate tellus cursus dignissim nec vel metus. Vivamus a ligula justo. Nulla in finibus felis
+                        <div style={{width: "85vw", marginTop: "2.5vh", color: "white"}}>
+                            {option.optionDescription}
                         </div>
                     
                         <div className="stage-wrapper">
@@ -144,7 +140,7 @@ export const SearchLanding = ({}) =>{
                                 {option.stages.tertiary}
                             </div>
                         </div>
-                        {i === productInfo.options.length - 1 ? "": <div className="divider"/>}
+                        {i === productInfo.options.length - 1 ? "": <hr className="divider"/>}
                     </div>
                 )
             })}

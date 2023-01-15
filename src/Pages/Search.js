@@ -29,32 +29,11 @@ export const Search = ({}) =>{
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        background: "#fff",
+        background: "#0d1116",
     }}
     >
         <Navbar style= {{top: "1%", left: "1%"}}/>
         <Searchbar setSearchQuery={setSearchQuery} setClicked={setClicked} onSubmitFunc={handleProductSubmit} givenData=""/>
-        <div style={{border: "solid 1px gray", borderTop:"none", width: "80vw", display: `${clicked ? "block" : "none"}`, position:"absolute", left: "9vw", top: "10vh"}}>
-            {dataFiltered.map((d, i) => (
-            <div
-                
-                className="text"
-                style={{
-                backgroundColor: "#fff",
-                padding: 5,
-                justifyContent: "normal",
-                fontSize: 20,
-                color: "blue",
-                marginleft: 50,
-                width: "250px",
-                textAlign: "left"
-                }}
-                key={i}
-            >
-                {d}
-            </div>
-            ))}
-        </div>
     </div>
     )
 } 
