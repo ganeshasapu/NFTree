@@ -37,17 +37,18 @@
 }
 
 .slider {
-width: 300px;
-text-align: center;
-overflow: hidden;
-position: absolute;
-top: 102%;
-left: 40%;
+    width: 618px;
+    height: 550px;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    top: 114%;
+    left: 36%;
 }
 
 .slides {
 display: flex;
-
+border-radius: 16px;
 overflow-x: auto;
 scroll-snap-type: x mandatory;
 
@@ -73,22 +74,21 @@ border-radius: 10px;
 background: transparent;
 }
 .slides > div {
-scroll-snap-align: start;
-flex-shrink: 0;
-width: 300px;
-height: 300px;
-margin-right: 50px;
-border-radius: 10px;
-background: #eee;
-transform-origin: center center;
-transform: scale(1);
-transition: transform 0.5s;
-position: relative;
-
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: 100px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 649px;
+    height: 550px;
+    margin-right: 50px;
+    border-radius: 10px;
+    background: #3eb550;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
 }
 .slides > div:target {
 /*   transform: scale(0.8); */
@@ -121,18 +121,19 @@ display: inline-flex;
 width: 1.5rem;
 height: 1.5rem;
 background: white;
+color: #2d2d2d;
 text-decoration: none;
 align-items: center;
 justify-content: center;
 border-radius: 50%;
-margin: 0 0 0.5rem 0;
+margin: 0 0 0.5rem 0; 
 position: relative;
 }
 .slider > a:active {
 top: 1px;
 }
 .slider > a:focus {
-background: #000;
+opacity: .8;
 }
 
 /* Don't need button navigation */
@@ -143,5 +144,17 @@ background: #000;
 
 #about-us{
     position: absolute;
-    top: 152%;
+    top: 170vh;
+    color: white;
+    font-size: 2vw;
+    width: 80vw;
+    left: 10vw;
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.highlight{
+    background-image: linear-gradient(to top, #3eb550, #022e00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
