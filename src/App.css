@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: Epilogue, sans-serif;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -22,6 +24,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: Epilogue, sans-serif;
 }
 
 .App-link {

@@ -1,0 +1,79 @@
+.option-wrapper{
+    font-size: 20px;
+    margin: 5px;
+    margin-left: 5vw;
+
+}
+
+.stage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.stage-icon{
+    border-radius: 100%;
+    background-color: red;
+    width: 75px;
+    height: 75px;
+}
+
+.divider{
+    width: 85vw;
+    height: 5px;
+    border: none;
+    background-color: gray;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+}
+
+.stage-wrapper{
+    display: flex;
+    width: 85vw;
+    justify-content: space-between;
+    margin-top: 5vh;
+}
+
+.stage-line-1{
+    position: absolute;
+    width: 40vw;
+    height: 5px;
+    background-color: red;
+    left: 7.5vw;
+    margin-top: 2.5vh;
+}
+
+.stage-line-2{
+    position: absolute;
+    width: 40vw;
+    height: 5px;
+    background-color: red;
+    left: 47.5vw;
+    margin-top: 2.5vh;
+}
+
+.options-contianer{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 5vw;
+}
+
+.carbon-emissions-main{
+    font-size: 36px;
+    margin-top: 5px;
+}
+
+.emissions-rating-main{
+    display: flex;
+    gap:15px;
+    margin-top: 5px;
+}
+
+.star{
+    font-size: 30px;
+}

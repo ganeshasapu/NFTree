@@ -1,0 +1,26 @@
+#BackgroundImage{
+    width: 100%;
+    height: 100px;
+}
+#img1{
+    height: 810px;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: -1;
+}
+
+#BackgroundImage::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -0.3%;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #0d1116, transparent);
+    z-index: 1;
+}
+
+#body{
+
+}
