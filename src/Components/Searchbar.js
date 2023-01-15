@@ -3,12 +3,29 @@ import { IconButton } from '@material-ui/core';
 import { TextField } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
 import "../Stylesheets/SearchStyle.css"
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
 
 export const Searchbar = ({setSearchQuery, setClicked, onSubmitFunc, givenData}) =>{
     
+    const navigate = useNavigate()
+    function handleSubmit(e){
+        e.preventDefault()
+        navigate("/search/" + document.getElementById("search-bar").value)
+        
+    }
+
+    useEffect(() => {
+        // 👇️ call method in useEffect hook
+        var ele = document.getElementById("form")
+        console.log(ele)
+        if(ele.addEventListener){
+            ele.addEventListener("submit", handleSubmit, false); 
+        }
+    }, []);
 
     return(
-            <div>
+            <form onSubmit={handleSubmit} id="form" style={{paddingTop: "5vh"}}>
                 <TextField
                 id="search-bar"
                 className="search"
@@ -24,13 +41,13 @@ export const Searchbar = ({setSearchQuery, setClicked, onSubmitFunc, givenData})
                 label="Enter Product"
                 variant="outlined"
                 placeholder="Search..."
+                defaultValue={givenData}
                 >
                     
                 </TextField>
-                <IconButton onClick={() =>{
-                    onSubmitFunc(document.getElementById("search-bar").value)
-                }}><Search style={{ fill: "blue"}} /></IconButton>
-            </div>
+
+                <IconButton type="submit"><Search style={{ fill: "blue"}} /></IconButton>
+            </form>
             
         
         

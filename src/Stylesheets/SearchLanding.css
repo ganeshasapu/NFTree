@@ -1,3 +1,7 @@
+#body-container{
+    background-color: #fff;
+}
+
 .option-wrapper{
     font-size: 20px;
     margin: 5px;
@@ -76,4 +80,78 @@
 
 .star{
     font-size: 30px;
+}
+
+.button-unfill{
+
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    height: 30vh;
+    background-color: white;
+    border: 1px solid #000;
+    box-shadow: 24;
+    padding: 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.custom-styles {
+  --ReactInputVerificationCode-itemWidth: 2.5rem;
+  --ReactInputVerificationCode-itemHeight: 3.5rem;
+}
+
+.custom-styles .ReactInputVerificationCode__item {
+  position: relative;
+  color: #262626;
+  font-weight: 500;
+}
+
+.custom-styles .ReactInputVerificationCode__item,
+.custom-styles .ReactInputVerificationCode__item.is-active {
+  box-shadow: none;
+}
+
+.custom-styles .ReactInputVerificationCode__item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ebebeb;
+  transition: background-color 0.2s ease-out;
+}
+
+.custom-styles .ReactInputVerificationCode__item.is-active:after {
+  background-color: #046cde;
+}
+
+.modal-header{
+    font-size: 24px;
+}
+
+.checkmark{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+    height: 20vw;
+    background-color: green !important;
+    z-index: 100 !important;
+    
 }

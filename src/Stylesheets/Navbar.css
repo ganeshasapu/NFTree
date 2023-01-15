@@ -2,3 +2,33 @@
     width: 100vw;
     height: 10vh;
 }
+#logo{
+    width: auto;
+    height: 95px;
+    position: relative;
+    float: left;
+    left: 7%;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.navbar a{
+    margin-top: 35px;
+    padding-right: 45px;
+    letter-spacing: 100;
+    font-size: 1.5vw;
+    text-decoration: none;
+    color: #665e5e;
+    position: relative;
+    left: 9%;
+    float: left;
+    align-items: center;
+    flex-direction: row;
+    z-index: 5;
+    opacity: .6;
+}
+
+.navbar a:hover{
+    opacity: 1;
+    transition: all .7s ease-in-out;
+}

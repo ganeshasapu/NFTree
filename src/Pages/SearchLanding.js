@@ -6,10 +6,13 @@ import { Searchbar } from "../Components/Searchbar";
 
 import { productsList } from "../assets/productsList";
 import { useNavigate } from "react-router";
-import { useState } from "react";
-import { Height } from "@material-ui/icons";
+import { useEffect, useState } from "react";
 import ParkIcon from '@mui/icons-material/Park';
 import ParkOutlinedIcon from '@mui/icons-material/ParkOutlined';
+import LinkIcon from '@mui/icons-material/Link';
+import { Modal } from "@material-ui/core";
+import ReactInputVerificationCode from "react-input-verification-code";
+
 
 
 // Company, Company logo, Option image, Option Description, Option Carbon emissions, Stages: primary, secondary, tertiary
@@ -24,15 +27,20 @@ export const SearchLanding = ({}) =>{
     };
     const navigate = useNavigate();
 
-  const [searchQuery, setSearchQuery] = useState("");
+    const [searchQuery, setSearchQuery] = useState("");
     const dataFiltered = filterData(searchQuery, productsList);
     const [clicked, setClicked] = useState(false)
+    const [open, setOpen] = useState(false);
+    const [code, setCode] = useState("")
+
+    const [checkOpen, setCheckOpen] = useState(false)
+
+    const correct_code = "11111111"
 
     function handleProductSubmit(product){
         navigate("/search/" + product)
     }
-
-
+ 
     const productName = useParams().product
     var productInfo = {}
     productData.forEach((product) =>{
@@ -40,35 +48,50 @@ export const SearchLanding = ({}) =>{
             productInfo = product
         }
     })
+
+    function handlePurchaseClick(){
+        setOpen(true)
+    }
+
+
+    function handleVerificationEntered(){
+        if(code === correct_code){
+            setCheckOpen(true)
+            navigate("/nft")
+        }
+        else{
+            console.log("Incorrect")
+        }
+    }
+
+    console.log(checkOpen)
     
-    return(<div>
+    return(
+    <div id="body-container">
         <Navbar />
         <Searchbar setSearchQuery={setSearchQuery} setClicked={setClicked} onSubmitFunc={handleProductSubmit} givenData={productName}/>
-        <div style={{border: "solid 1px gray", backgroundColor: "white", borderTop:"none", width: "80vw", display: `${clicked ? "block" : "none"}`, position:"absolute", left: "9vw", top: "15vh"}}>
-        {dataFiltered.map((d, i) => (
-        <div
-            className="text"
-            style={{
-            padding: 5,
-            justifyContent: "normal",
-            fontSize: 20,
-            color: "blue",
-            marginleft: 50,
-            width: "250px",
-            textAlign: "left"
-            }}
-            key={i}
-        >
-            {d}
+        <div style={{border: "solid 1px gray", backgroundColor: "white", borderTop:"none", width: "80vw", display: `${clicked ? "block" : "none"}`, position:"absolute", left: "9vw", top: "10vh"}}>
+            {dataFiltered.map((d, i) => (
+            <div
+                className="text"
+                style={{
+                padding: 5,
+                justifyContent: "normal",
+                fontSize: 20,
+                color: "blue",
+                marginleft: 50,
+                width: "250px",
+                textAlign: "left"
+                }}
+                key={i}
+            >
+                {d}
+            </div>
+            ))}
         </div>
-        ))}
-        
-    </div>
-    <div className="options-contianer">
+        <div className="options-contianer">
             {productInfo.options.map((option, i) =>{
-
                 var stars = Math.min(Math.floor(option.optionCarbonEmissions / 3000), 5)
-                console.log(stars)
                 return(
                     <div className="option-wrapper">
                         <div style={{display: "flex"}}>
@@ -79,8 +102,18 @@ export const SearchLanding = ({}) =>{
                         </div>
                         <div style={{border: "1px solid red", width: "85vw", height: "40vh", marginTop: "2vh"}}>
                         </div>
-                        <div className="carbon-emissions-main">
-                            {option.optionCarbonEmissions}
+                        <div style={{display:"flex", width:"85vw"}}>
+                            <div className="carbon-emissions-main">
+                                {option.optionCarbonEmissions}
+                            </div>
+                            <div style={{textAlign:"right", flexGrow: 1}}>
+                                <button className="button-unfill" onClick={() =>{
+                                    handlePurchaseClick()
+                                    // window.open(option.productLink, "_blank")
+                                }}>
+                                <   LinkIcon fontSize="large" />
+                                </button>
+                            </div>
                         </div>
                         <div className="emissions-rating-main">
                             {[...Array(stars)].map((n) =>{
@@ -116,7 +149,27 @@ export const SearchLanding = ({}) =>{
                 )
             })}
         </div>
-        </div>
+        <Modal
+            open={open}
+            onClose={() =>{
+                setOpen(false)
+            }}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+        >
+            <div id="test-id" className="modal">
+                <div className="modal-header">Enter Verification Code: </div>
+                <div className="custom-styles">
+                    <ReactInputVerificationCode id="code-input" length={9} autoFocus={true} placeholder="" onChange={e =>{
+                        setCode(e)
+                    }} onCompleted={() =>{ 
+                            handleVerificationEntered()
+                        }} />
+                </div>
+            </div>
+        </Modal>
+        {checkOpen ? <div className="checkmark"/> : ""}
+    </div>
 
     )
 } 

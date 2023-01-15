@@ -8,7 +8,7 @@ export const productData = [
                     optionImage: "Test",
                     optionDescription: "Test",
                     optionCarbonEmissions: 10000,
-                    productLink:"",
+                    productLink:"https://www.tesla.com/en_ca/models",
                     stages: {
                         primary: "Test",
                         secondary: "Test",
@@ -21,6 +21,7 @@ export const productData = [
                     optionImage: "Test",
                     optionDescription: "Test",
                     optionCarbonEmissions: 10000,
+                    productLink:"https://www.tesla.com/en_ca/models",
                     stages: {
                         primary: "Test",
                         secondary: "Test",
@@ -33,6 +34,7 @@ export const productData = [
                     optionImage: "Test",
                     optionDescription: "Test",
                     optionCarbonEmissions: 10000,
+                    productLink:"https://www.tesla.com/en_ca/models",
                     stages: {
                         primary: "Test",
                         secondary: "Test",
@@ -45,6 +47,7 @@ export const productData = [
                     optionImage: "Test",
                     optionDescription: "Test",
                     optionCarbonEmissions: 10000,
+                    productLink:"https://www.tesla.com/en_ca/models",
                     stages: {
                         primary: "Test",
                         secondary: "Test",
@@ -57,6 +60,7 @@ export const productData = [
                     optionImage: "Test",
                     optionDescription: "Test",
                     optionCarbonEmissions: 10000,
+                    productLink:"https://www.tesla.com/en_ca/models",
                     stages: {
                         primary: "Test",
                         secondary: "Test",
